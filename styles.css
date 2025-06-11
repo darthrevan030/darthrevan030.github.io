@@ -9,15 +9,16 @@ body {
 }
 
 nav {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin: 20px auto;
-    padding: 15px 30px;
+    padding: 15px;
     background: #e5e5eb;
     border-radius: 12px;
+    max-width: max-content;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: fit-content; /* Shrinks to fit content */
-    max-width: 90%;
 }
 
 .container {
