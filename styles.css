@@ -9,17 +9,15 @@ body {
 }
 
 nav {
-    position: fixed;
-    top: 0;
-    /* left: 0; */
-    width: 100%;
+    position: relative;
+    margin: 20px auto;
+    padding: 15px 30px;
     background: #e5e5eb;
-    text-align: center;
-    margin:20px auto;
-    padding: 20px 0;
-    border-radius: 0 0 12px 12px;
+    border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure it stays above other elements */
+    text-align: center;
+    width: fit-content; /* Shrinks to fit content */
+    max-width: 90%;
 }
 
 .container {
