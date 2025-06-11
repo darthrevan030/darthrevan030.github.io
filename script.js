@@ -10,20 +10,24 @@ function throttle(func, limit) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    let lastScrollY = window.scrollY;
     const nav = document.getElementById('mainNav');
+    if (!nav) return;
+
+    let lastScrollY = window.scrollY;
 
     const handleScroll = function () {
-        if (!nav) return;
+        const currentScrollY = window.scrollY; 
 
-        if (window.scrollY < lastScrollY) {
-            nav.style.top = '0';
-            } else {
-            nav.style.top = '-100px';
-            }
-
-        lastScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY && currentScrollY > 100){
+        // hide on scroll down
+        nav.classList.add('hidden');
+        } else {
+        // show on scroll up
+        nav.classList.remove('hidden');
+        }
+    
+        lastScrollY = currentScrollY;
     };
 
-    window.addEventListener('scroll', throttle(handleScroll, 1000));
+    window.addEventListener('scroll', throttle(handleScroll, 100));
 });
